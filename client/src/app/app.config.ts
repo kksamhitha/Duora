@@ -5,12 +5,13 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from '../Core/services/auth.interceptor';
 import { InitService } from '../Core/services/init-service';
 import { lastValueFrom } from 'rxjs';
+import { errorInterceptor } from '../Core/interceptors/error-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withViewTransitions()),
-    provideHttpClient(withInterceptors([authInterceptor])),
+    provideHttpClient(withInterceptors([errorInterceptor])),
     provideAppInitializer(() => {
       const initService = inject(InitService);
       return new Promise<void>((resolve) => {

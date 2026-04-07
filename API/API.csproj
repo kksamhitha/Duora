@@ -22,8 +22,10 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Entities\" />
+    <Folder Include="Errors\" />
     <Folder Include="Extensions\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="MiddleWare\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
